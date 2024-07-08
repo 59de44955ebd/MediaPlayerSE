@@ -39,10 +39,10 @@ echo '****************************************'
 echo 'Optimizing application...'
 echo '****************************************'
 
-#rm "dist/$APP_NAME.app/Contents/Frameworks/libcrypto.3.dylib"
-#rm "dist/$APP_NAME.app/Contents/Frameworks/libssl.3.dylib"
-#rm "dist/$APP_NAME.app/Contents/Resources/libcrypto.3.dylib"
-#rm "dist/$APP_NAME.app/Contents/Resources/libssl.3.dylib"
+rm "dist/$APP_NAME.app/Contents/Frameworks/libcrypto.3.dylib"
+rm "dist/$APP_NAME.app/Contents/Frameworks/libssl.3.dylib"
+rm "dist/$APP_NAME.app/Contents/Resources/libcrypto.3.dylib"
+rm "dist/$APP_NAME.app/Contents/Resources/libssl.3.dylib"
 
 rm -R "dist/$APP_NAME.app/Contents/Frameworks/PyQt5/uic"
 rm -R "dist/$APP_NAME.app/Contents/Resources/PyQt5/uic"
