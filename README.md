@@ -18,3 +18,40 @@ A simple media player for macOS and Windows, based on Python 3, PyQt5 (portable 
 ## Supported audio codecs (selection)
 * **Windows**: aac ac3 alac dts flac mp2 mp3 nellymoser opus pcm realaudio truespeech vorbis wavpack wma
 * **macOS**: aac ac3 alac flac mp2 mp3 pcm
+
+## VideoWidget's API
+
+### Signals
+```
+mediaReady                  -> bool success
+mousePressed                -> None
+doubleClicked               -> None
+metadataChanged             -> metadata as dict
+```
+### Properties
+```
+filename                    -> the currently loaded file ur URL (full path)
+is_url                      -> True if current file is HTTP(S)-URL, False if local file
+```
+### Methods
+```
+load_media(filename: str)
+close_media()
+step(steps: int)            -> step <steps> frames forward, or back if <steps> is negative
+get_natural_size()          -> returns tuple (width, height) or None
+get_duration()              -> returns seconds as float, or 0 if there is no duration
+get_fps()                   -> returns fps as float, or None if there is no framerate
+has_video()                 -> returns bool (True or False)
+has_audio()                 -> returns bool (True or False)
+get_volume()                -> returns volume as float in range 0..1
+set_volume(volume: float)   -> set volume as float in range 0..1
+set_muted(flag: bool)       -> True mutes, False unmutes
+seek_to_time(sec: float)    -> seek to time in seconds as float
+get_time()                  -> returns current time in seconds as float (or None)
+play()
+pause()
+toggle_playback()           -> returns True if player now playing, otherwise False
+```
+
+### Notes
+You don't have to connect to signals mousePressed and doubleClicked, but you *always* have to connect to signal mediaReady, since loading a media file is asynchronous in macOS/AVFoundation. So when loading a file with load_media(), you always have to wait until mediaReady is emitted, and if 'success' was True, you can go on and now do stuff with the loaded media, if it was False then something went wrong, i.e. the file couldn't be loaded.
