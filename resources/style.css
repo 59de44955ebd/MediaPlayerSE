@@ -1,0 +1,81 @@
+QDockWidget {
+	font-size: 11px;
+}
+QDockWidget::title {
+	padding: 5px 2px 2px 2px;
+	background-color: #000000;
+}
+QDockWidget::close-button {
+    right: 2px;
+    top: 3px;
+}
+QLineEdit {
+	border: 1px solid #303030;
+	border-radius: 5px;
+	padding: 2px 4px;
+	margin-right: 4px;
+}
+QLineEdit:focus {
+	border-color: #636363;
+}
+QListWidget, QTreeWidget {
+	border: none;
+	selection-background-color: #2b2b2b;
+	selection-color: #ffffff;
+	background-color: #161616;
+}
+QListWidget::item {
+	padding: 1px 0;
+}
+QMenuBar {
+	background-color: #2b2b2b;
+}
+QMenuBar::item {
+	padding: 2px 5px;
+	background: transparent;
+}
+QMenuBar::item:selected {
+	background: #414141;
+}
+QMenu::separator {
+	background-color: #4e4e4e;
+	height: 1px;
+	margin-top: 3px;
+	margin-bottom: 0px;
+}
+QMenu {
+	border: 1px solid #4e4e4e;
+}
+QMenu::item:disabled {
+	background-color: transparent;
+}
+QMenu::item:selected {
+	background-color: #414141;
+}
+QToolBar{
+	border: 1px solid #303030;
+	border-left: none;
+	border-right: none;
+}
+QToolButton:checked {
+	background-color: #303030;
+	border-color: #636363;
+}
+QToolBar::separator {
+	background-color: #303030;
+	width: 1px;
+	margin: 3px;
+}
+QStatusBar, QStatusBar QLabel {
+	font-size: 11px;
+}
+QDockWidget QLabel {
+	border: 1px solid #4e4e4e;
+	padding: 2px 2px;
+}
+QToolTip {
+	color: white;
+	background: #161616;
+	padding: 2px;
+	border: 1px solid #4e4e4e;
+}
